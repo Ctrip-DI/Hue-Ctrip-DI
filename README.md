@@ -56,7 +56,7 @@ Configs needed in hue.ini config file.
 
 	[sparksql]
     [[spark-service]]
-        spark_sql_url="http://10.2.4.189:8089/di-data-service/"
+        spark_sql_url="http://localhost:8089/di-data-service/"
 
 UI Example
 ------------
