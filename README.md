@@ -73,6 +73,10 @@ UI Example
 
 ![Off-CLI Installation](https://github.com/Ctrip-DI/Hue-Ctrip-DI/blob/master/docs/metric_monitor.png)
 
+###Spark SQL UI##
+
+![Off-CLI Installation](https://github.com/Ctrip-DI/Hue-Ctrip-DI/blob/master/docs/sparksql.png)
+
 ##Resources##
 
 Developer Mail: xgliao@ctrip.com
