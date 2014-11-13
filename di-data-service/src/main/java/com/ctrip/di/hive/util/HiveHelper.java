@@ -31,8 +31,6 @@ public class HiveHelper {
 		if (hiveClient == null) {
 			HiveConf conf = new HiveConf();
 			conf.addResource(HiveHelper.class.getClassLoader().getResource(
-					"conf/hive/hive-default.xml"));
-			conf.addResource(HiveHelper.class.getClassLoader().getResource(
 					hive_conf));
 
 			try {
