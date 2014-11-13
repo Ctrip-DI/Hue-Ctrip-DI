@@ -199,9 +199,6 @@ public class HivePartitionCleanService {
 
 	public static void main(String[] args) {
 
-		HivePartitionCleanService job = new HivePartitionCleanService();
-
-		System.out.println(job.remove_partition_num_alert_threshold);
 	}
 
 }
