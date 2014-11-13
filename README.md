@@ -55,23 +55,23 @@ Configs needed in hue.ini config file.
 Configs needed in hue.ini config file.
 
 	[sparksql]
-    [[di-service]]
-        di_data_service_url="http://localhost:8080/di-data-service/"
+    [[spark-service]]
+        spark_sql_url="http://10.2.4.189:8089/di-data-service/spark"
 
 UI Example
 ------------
 
 ###MapReduce Dashboard###
 
-![Off-CLI Installation]()
+![Off-CLI Installation](https://github.com/Ctrip-DI/Hue-Ctrip-DI/blob/master/docs/mapreduce_dashboard.png)
 
 ###Hdfs Dashboard###
 
-![Off-CLI Installation]()
+![Off-CLI Installation](https://github.com/Ctrip-DI/Hue-Ctrip-DI/blob/master/docs/hdfs_dashboard.png)
 
 ###Metric Dashboard###
 
-![Off-CLI Installation]()
+![Off-CLI Installation](https://github.com/Ctrip-DI/Hue-Ctrip-DI/blob/master/docs/metric_monitor.png)
 
 ##Resources##
 
