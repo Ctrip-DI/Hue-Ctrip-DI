@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctrip.di.dao.spark.SparkJobMapper">
+
+	<resultMap type="sparkJob" id="sparkJobMap">
+		<result property="id" column="id" />
+		<result property="startTime" column="start_time" />
+		<result property="finishTime" column="finish_time" />
+		<result property="sql" column="sql" />
+		<result property="user" column="user" />
+		<result property="status" column="status" />
+	</resultMap>
+	
+	<insert id="insertSparkJob" parameterType="sparkJob">
+		<![CDATA[ 
+            insert into spark_jobs(
+            	start_time,
+				finish_time,
+				`sql`,
+				user,
+				status
+            ) values(
+            	#{startTime},
+				#{finishTime},
+				#{sql},
+				#{user},
+				#{status}
+            )
+        ]]>
+	</insert>
+
+	<select id="getSparkJobsByUser" resultType="sparkJob" resultMap="sparkJobMap"
+		parameterType="String">  
+        <![CDATA[ 
+            SELECT * from spark_jobs where user = #{param1} order by start_time desc
+        ]]>
+	</select>
+
+
+</mapper>

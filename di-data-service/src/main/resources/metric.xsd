@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="clusters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="cluster"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cluster">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="host_list"/>
+        <xs:element ref="link"/>
+        <xs:element ref="metrics"/>
+      </xs:sequence>
+      <xs:attribute name="label" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="host_list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="host"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="host" type="xs:string"/>
+  <xs:element name="link" type="xs:anyURI"/>
+  <xs:element name="metrics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="metric"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="metric">
+    <xs:complexType mixed="true">
+      <xs:attribute name="by_host" use="required" type="xs:NCName"/>
+      <xs:attribute name="graph_type" use="required"/>
+      <xs:attribute name="host_name"/>
+      <xs:attribute name="image_per_host" use="required" type="xs:boolean"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

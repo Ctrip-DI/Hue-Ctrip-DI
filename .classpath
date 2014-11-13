@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="com/ctrip/di/common/jmx/" kind="src" path="di-data-service/src/main/java"/>
+	<classpathentry kind="src" path="di-data-service/src/main/java/com/ctrip/di/common/jmx"/>
+	<classpathentry kind="src" path="di-data-service/src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="di-data-service/target/test-classes"/>
+</classpath>

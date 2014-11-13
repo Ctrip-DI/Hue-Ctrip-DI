@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl"  href="configuration.xsl"?>
+
+<!-- TEST -->
+ <configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://ns</value>
+    </property>
+    <property>
+        <name>dfs.nameservices</name>
+        <value>ns</value>
+    </property>
+    <property>
+        <name>dfs.ha.namenodes.ns</name>
+        <value>SVR2368HP360,SVR2369HP360</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.ns.SVR2368HP360</name>
+        <value>SVR2368HP360.hadoop.test.sh.ctriptravel.com:54310</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.ns.SVR2369HP360</name>
+        <value>SVR2369HP360.hadoop.test.sh.ctriptravel.com:54310</value>
+    </property>
+    <property>
+        <name>dfs.client.failover.proxy.provider.ns</name>
+        <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+    </property>
+</configuration>

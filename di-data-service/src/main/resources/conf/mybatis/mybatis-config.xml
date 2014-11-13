@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="yarnJobsDo" type="com.ctrip.di.dao.YarnJobsDo" />
+		<typeAlias alias="yarnJobCountDo" type="com.ctrip.di.dao.YarnJobCountDo" />
+		<typeAlias alias="yarnJobUserCountDo" type="com.ctrip.di.dao.YarnJobUserCountDo" />
+		<typeAlias alias="yarnUserJobDo" type="com.ctrip.di.dao.YarnUserJobDo" />
+		<typeAlias alias="authUser" type="com.ctrip.di.dao.user.AuthUser" />
+		<typeAlias alias="sparkJob" type="com.ctrip.di.dao.spark.SparkJob" />
+		
+		<typeAlias alias="hiveJobsDo" type="com.ctrip.di.dao.hive.HiveJobsDo" />
+		<typeAlias alias="statisticsUser" type="com.ctrip.di.dao.user.StatisticsUser" />
+		
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="conf/mybatis/YarnJobs.xml" />
+		<mapper resource="conf/mybatis/auth_user.xml" />
+		<mapper resource="conf/mybatis/hiveJobs.xml" />
+		<mapper resource="conf/mybatis/SparkJobs.xml" />
+		<mapper resource="conf/mybatis/statistics_user.xml" />
+	</mappers>
+	
+	  
+</configuration> 

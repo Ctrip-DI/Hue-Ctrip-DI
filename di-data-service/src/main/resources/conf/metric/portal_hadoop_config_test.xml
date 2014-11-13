@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clusters>
+	<cluster name="hbase-cluster-test-source" label="HBase Cluster Test Source">
+		<metrics>
+			<metric name="hbase.regionserver.compactionTime_avg_time">Region Server平均Compact所需时间</metric>
+			<metric name="hbase.regionserver.fsWriteSize_avg_time">Region Server平均写Size</metric>
+			<metric name="hbase.rpc.metrics.RpcQueueTime_avg_time">RPC在Queue里的时间（毫秒）</metric>
+			<metric name="hbase.rpc.metrics.RpcProcessingTime_avg_time">RPC平均请求时长（毫秒）</metric>
+			<metric name="hbase.rpc.metrics.multi_avg_time">RPC平均写时长（毫秒）</metric>
+			<metric name="hbase.rpc.metrics.next_avg_time">RPC平均读时长（毫秒）</metric>
+		</metrics>
+	</cluster>
+
+	<cluster name="hdfs-cluster-test-source" label="Hdfs Cluster Test Source">
+		<metrics>
+			<metric name="dfs.FSNamesystem.CapacityRemainingGB">CPU报告</metric>
+			<metric name="dfs.datanode.WriteBlockOpAvgTime">RPC平均请求时长（毫秒）</metric>
+			<metric name="dfs.datanode.ReadBlockOpAvgTime">HBaseMaster请求次数</metric>
+			<metric name="rpc.rpc.RpcQueueTimeAvgTime">Region Server Block Cache命中率</metric>
+			<metric name="rpc.rpc.RpcProcessingTimeAvgTime">Region Server Block Cache命中率</metric>
+		</metrics>
+	</cluster>
+	
+	<cluster name="sysadmin-cluster-test-source" label="SysAdmin Cluster">
+		<metrics>
+			<metric name="disk_free">硬盘空闲空间</metric>
+			<metric name="mem_free">内存空闲空间</metric>
+		</metrics>
+	</cluster>
+	<cluster name="yarn-cluster-test-source" label="Yarn Cluster">
+		<metrics>
+			<metric name="rpcdetailed.rpcdetailed.RegisterApplicationMasterAvgTime">App注册平均时间</metric>
+			<metric name="yarn.NodeManagerMetrics.ContainersFailed">Task失败</metric>
+			<metric name="rpcdetailed.rpcdetailed.StartContainerAvgTime">启动Task平均时间</metric>
+			<metric name="yarn.NodeManagerMetrics.AllocatedContainers">分配Task平均时间</metric>
+		</metrics>
+	</cluster>
+
+</clusters>

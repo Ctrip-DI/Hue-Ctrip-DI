@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctrip.di.dao.user.AuthUserMapper">
+
+	<resultMap type="authUser" id="authUserMap">
+		<result property="userName" column="username" />
+		<result property="password" column="password" />
+	</resultMap>
+
+	<select id="getAuthUser" resultType="authUser" resultMap="authUserMap"
+		parameterType="String">  
+        <![CDATA[ 
+            SELECT * from auth_user where username = #{param1} 
+        ]]>
+	</select>
+
+
+</mapper>

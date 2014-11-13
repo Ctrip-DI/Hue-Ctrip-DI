@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctrip.di.dao.user.StatisticsUserMapper">
+
+	<resultMap type="statisticsUser" id="statisticsMap">
+		<result property="id" column="id" />
+		<result property="user_type" column="user_type" />
+		<result property="counts" column="counts" />
+		<result property="timestamps" column="timestamps" />
+	</resultMap>
+
+	<insert id="insertStatisticsUser" parameterType="statisticsUser">  
+        <![CDATA[ 
+            insert into user_statistics_details(user_type, counts, timestamps)
+            values(#{user_type}, #{counts}, #{timestamps})
+        ]]>
+	</insert>
+	
+	<select id="queryAllStatistic" resultType="statisticsUser" resultMap="statisticsMap">
+		<![CDATA[
+			select * from user_statistics_details
+		]]>
+	</select>
+	
+
+</mapper>

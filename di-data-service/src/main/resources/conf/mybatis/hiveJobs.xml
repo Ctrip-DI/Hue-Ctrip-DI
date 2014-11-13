@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctrip.di.dao.hive.HiveJobsMapper">
+
+	<resultMap type="hiveJobsDo" id="hiveJobsMap">
+		<result property="dbname" column="dbname" />
+		<result property="tablename" column="tablename" />
+		<result property="pt_format" column="pt_format" />
+		<result property="keepdays" column="keepdays" />
+		<result property="checkrate" column="checkrate" />
+		<result property="username" column="username" />
+		<result property="email" column="email" />
+		<result property="create_time" column="create_time" />
+		<result property="modified_time" column="modified_time" />
+	</resultMap>
+
+	<insert id="insertHiveJobs" parameterType="hiveJobsDo">  
+        <![CDATA[ 
+            insert into ctrip_hive_jobs(dbname, tablename, pt_format, keepdays, checkrate, username, email, create_time, modified_time)
+            values(#{dbname}, #{tablename}, #{pt_format}, #{keepdays}, #{checkrate}, #{username}, #{email}, #{create_time}, #{modified_time})
+        ]]>
+	</insert>
+	
+	<select id="getHiveJobs" resultType="hiveJobsDo" resultMap="hiveJobsMap"  parameterType="String">
+		<![CDATA[
+			select * from ctrip_hive_jobs where dbname=#{param1} and tablename=#{param2}
+		]]>
+	</select>
+	
+	<select id="getAllHiveJobs" resultType="hiveJobsDo" resultMap="hiveJobsMap">
+		<![CDATA[
+			select * from ctrip_hive_jobs
+		]]>
+	</select>
+	
+	<update id="updateHiveJobs" parameterType="hiveJobsDo">
+		<![CDATA[
+			update ctrip_hive_jobs set pt_format=#{pt_format}, keepdays=#{keepdays}, checkrate=#{checkrate}, username=#{username},
+			 	email=#{email}, create_time=#{create_time}, modified_time=#{modified_time}
+				where dbname=#{dbname} and tablename=#{tablename}
+		]]>
+	</update>
+
+</mapper>
