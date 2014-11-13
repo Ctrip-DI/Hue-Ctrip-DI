@@ -197,8 +197,4 @@ public class HivePartitionCleanService {
 		}
 	}
 
-	public static void main(String[] args) {
-
-	}
-
 }
