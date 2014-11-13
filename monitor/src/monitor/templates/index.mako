@@ -27,7 +27,6 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 	</div>
 </div>
 
-
 <div  class="panel panel-default" style="margin-top:30px;">
 	<div class="panel-heading">	
 		<ul class="nav nav-pills" role="tablist">
