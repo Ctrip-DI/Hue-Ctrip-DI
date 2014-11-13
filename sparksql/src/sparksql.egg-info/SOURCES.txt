@@ -1,0 +1,14 @@
+setup.py
+src/sparksql/__init__.py
+src/sparksql/forms.py
+src/sparksql/models.py
+src/sparksql/settings.py
+src/sparksql/urls.py
+src/sparksql/views.py
+src/sparksql.egg-info/PKG-INFO
+src/sparksql.egg-info/SOURCES.txt
+src/sparksql.egg-info/dependency_links.txt
+src/sparksql.egg-info/entry_points.txt
+src/sparksql.egg-info/not-zip-safe
+src/sparksql.egg-info/requires.txt
+src/sparksql.egg-info/top_level.txt
