@@ -29,7 +29,8 @@ Monitor will show Hadoop dashbard and every metric in your cluster. Spark sql is
 	$yum install tomcat
 	$Create mysql table and the script is /di-data-service/src/main/resources/script/di.sql
 	$Configured /di-data-service/src/main/resources/conf/di.properties for your invironment
-	$cd Hue-Ctrip-DI/di-data-service; mvn clean install -DskipTests
+	$cd Hue-Ctrip-DI/di-data-service; 
+	$mvn clean install -DskipTests
 	$copy di-data-service.war to tomcat
 
 ###Install monitor app:###
