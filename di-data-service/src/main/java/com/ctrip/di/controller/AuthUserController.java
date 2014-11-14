@@ -2,7 +2,6 @@ package com.ctrip.di.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,10 +19,12 @@ import com.ctrip.di.dao.user.AuthUser;
 import com.ctrip.di.dao.user.AuthUserMapper;
 
 /**
- * API to authenticate the user by username and password
- * Example: http://192.168.81.177:8089/di-data-service/auth/authenticate?username=test_xg&password=test
+ * API to authenticate the user by username and password Example:
+ * http://192.168.81
+ * .177:8089/di-data-service/auth/authenticate?username=test_xg&password=test
+ * 
  * @author xgliao
- *
+ * 
  */
 @Controller
 @RequestMapping("/auth")
@@ -50,7 +51,7 @@ public class AuthUserController {
 			return;
 		}
 		AuthUser authUser = authUserMapper.getAuthUser(username);
-		if(authUser == null) {
+		if (authUser == null) {
 			PrintWriterUtil.writeError(request, response,
 					"username is not exist");
 			return;

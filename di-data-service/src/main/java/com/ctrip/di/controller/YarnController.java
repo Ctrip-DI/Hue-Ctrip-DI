@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,13 +23,13 @@ import com.ctrip.di.dao.YarnUserJobDo;
 
 /**
  * APIs to get information by yarn
+ * 
  * @author xgliao
- *
+ * 
  */
 @Controller
 @RequestMapping("/yarn")
 public class YarnController {
-	private static Log logger = LogFactory.getLog(YarnController.class);
 
 	@Autowired
 	private YarnJobService yarnJobService;
