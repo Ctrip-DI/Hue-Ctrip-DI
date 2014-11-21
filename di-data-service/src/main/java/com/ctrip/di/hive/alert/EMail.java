@@ -18,10 +18,10 @@ import org.apache.commons.logging.LogFactory;
 public class EMail {
 	private static final Log logger = LogFactory.getLog(EMail.class);
 
-	public final static String HOST = "appmail.sh.ctriptravel.com";
-	public final static String USER = "appmail051";
-	public final static String PASSWORD = "b9{jkJ8^A\"iJ)B^wxem!";
-	public final static String FROM = "di_monitor@ctrip.com";
+	public final static String HOST = "*";
+	public final static String USER = "*";
+	public final static String PASSWORD = "*";
+	public final static String FROM = "*";
 
 	/**
 	 * send email
