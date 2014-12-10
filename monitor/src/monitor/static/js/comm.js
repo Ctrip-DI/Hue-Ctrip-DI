@@ -2,7 +2,7 @@
 function getNameList(names){
 	var nameList =[];
 	
-	for(index =0 ;index<reports.length;index ++){
+	for(var index =0 ;index<reports.length;index ++){
 		var report = reports[index];
 		nameList[index] = names+'&g='+report;
 	}
@@ -12,7 +12,7 @@ function getNameList(names){
 function getHostList(hosts , host){
 	var hostList = [] ;
 	
-	for(index =0 ;index<hosts.length;index ++){
+	for(var index =0 ;index<hosts.length;index ++){
 		var hh = hosts[index];
 		hostList[index] = host+'&h='+hh;
 	}
@@ -93,13 +93,7 @@ function loadMonitor(url){
 				bInfo:false ,
 				sDom:'<ilp>rt',
 				aaSorting: [[0, 'desc']], 
-				oLanguage:{
-					sEmptyTable:"查询不到相关数据!",
-					sZeroRecords:"查询不到相关数据!",
-					sProcessing:"正在加载中...",
-					sSearch:"搜索",
-					sLengthMenu:"每页显示_MENU_条记录"					
-				},
+				oLanguage:oLanguageStr,
 				aoColumnDefs:[{'sType':'numeric',
 					 'bSearchable': false, 
 					'aTargets': [ 1,2,3,4,5,6] 
@@ -180,13 +174,7 @@ function userJobMonitor(url ){
 				sDom:'<ilp>rt',
 				aaData:datas,
 				aaSorting: [[0, 'desc']], 
-				oLanguage:{
-					sEmptyTable:"查询不到相关数据!",
-					sZeroRecords:"查询不到相关数据!",
-					sProcessing:"正在加载中...",
-					sSearch:"搜索",
-					sLengthMenu:"每页显示_MENU_条记录"
-				},
+				oLanguage:oLanguageStr,
 				aoColumnDefs:[
 					{'sType':'numeric',
 					 'bSearchable': false, 

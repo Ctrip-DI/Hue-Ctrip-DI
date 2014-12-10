@@ -1,0 +1,438 @@
+# Chinese (China) translations for DI-Portal.
+# Copyright (C) 2014 Ctrip
+# This file is distributed under the same license as the DI-Portal project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2014-12-03 17:14-0800\n"
+"PO-Revision-Date: 2014-12-04 11:08+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: src/monitor/conf.py:26
+msgid "Configuration options for Oauth 1.0 authentication"
+msgstr "OAuth 1.0认证协议的配置选项"
+
+#: src/monitor/conf.py:30
+msgid "The Consumer key of the application."
+msgstr "应用程序的链接钥匙."
+
+#: src/monitor/templates/index.mako:22
+#: src/monitor/templates/metrics.mako:24
+msgid "Reports Monitor"
+msgstr "统计报表"
+
+#: src/monitor/templates/index.mako:23
+#: src/monitor/templates/metrics.mako:25
+msgid "Metrics Monitor"
+msgstr "Metrics监控"
+
+#: src/monitor/templates/index.mako:47
+msgid "Job SuccessRio"
+msgstr "Job成功率统计"
+
+#: src/monitor/templates/index.mako:50
+#: src/monitor/templates/index.mako:63
+#: src/monitor/templates/index.mako:76
+#: src/monitor/templates/index.mako:88
+#: src/monitor/templates/index.mako:164
+#: src/monitor/templates/index.mako:258
+#: src/monitor/templates/index.mako:271
+#: src/monitor/templates/index.mako:284
+#: src/monitor/templates/index.mako:297
+#: src/monitor/templates/index.mako:310
+#: src/monitor/templates/index.mako:323
+#: src/monitor/templates/index.mako:336
+#: src/monitor/templates/index.mako:348
+#: src/monitor/templates/index.mako:433
+#: src/monitor/templates/metrics.mako:210
+msgid "fold open"
+msgstr "折叠/展开"
+
+#: src/monitor/templates/index.mako:60
+msgid "Total Job Report"
+msgstr "Job 总数量统计"
+
+#: src/monitor/templates/index.mako:73
+msgid "Job History Report"
+msgstr "Job 历史执行结果统计"
+
+#: src/monitor/templates/index.mako:86
+msgid "Job Count Report"
+msgstr "Job 数量统计报表"
+
+#: src/monitor/templates/index.mako:94
+#: src/monitor/templates/index.mako:170
+#: src/monitor/templates/index.mako:354
+msgid "page show"
+msgstr "每页显示"
+
+#: src/monitor/templates/index.mako:100
+#: src/monitor/templates/index.mako:176
+#: src/monitor/templates/index.mako:360
+msgid "records"
+msgstr "条记录"
+
+#: src/monitor/templates/index.mako:106
+#: src/monitor/templates/index.mako:185
+msgid "Job Started Day"
+msgstr "Job开始时间"
+
+#: src/monitor/templates/index.mako:107
+#: src/monitor/templates/index.mako:187
+msgid "Success Ratio"
+msgstr "成功率"
+
+#: src/monitor/templates/index.mako:108
+#: src/monitor/templates/index.mako:188
+msgid "Un-Success Ratio"
+msgstr "未成功率"
+
+#: src/monitor/templates/index.mako:109
+#: src/monitor/templates/index.mako:189
+msgid "Failed Ratio"
+msgstr "失败率"
+
+#: src/monitor/templates/index.mako:110
+#: src/monitor/templates/index.mako:190
+msgid "Killed Ratio"
+msgstr "死亡率"
+
+#: src/monitor/templates/index.mako:111
+#: src/monitor/templates/index.mako:191
+msgid "Error Ratio"
+msgstr "错误率"
+
+#: src/monitor/templates/index.mako:112
+#: src/monitor/templates/index.mako:192
+msgid "Total Job Count"
+msgstr "Job总数"
+
+#: src/monitor/templates/index.mako:113
+#: src/monitor/templates/index.mako:193
+msgid "Success Job Count"
+msgstr "Job成功数"
+
+#: src/monitor/templates/index.mako:114
+#: src/monitor/templates/index.mako:194
+msgid "Un-Success Job Count"
+msgstr "Job未成功数"
+
+#: src/monitor/templates/index.mako:115
+#: src/monitor/templates/index.mako:195
+msgid "Failed Job Count"
+msgstr "Job失败数"
+
+#: src/monitor/templates/index.mako:116
+#: src/monitor/templates/index.mako:196
+msgid "Error Job Count"
+msgstr "Job错误数"
+
+#: src/monitor/templates/index.mako:117
+#: src/monitor/templates/index.mako:197
+msgid "Killed Job Count"
+msgstr "Job死亡数"
+
+#: src/monitor/templates/index.mako:153
+#: src/monitor/templates/index.mako:244
+#: src/monitor/templates/index.mako:405
+#: src/monitor/templates/metrics.mako:85
+#: src/monitor/templates/metrics.mako:164
+msgid "next page"
+msgstr "下一页"
+
+#: src/monitor/templates/index.mako:154
+#: src/monitor/templates/index.mako:245
+#: src/monitor/templates/index.mako:404
+#: src/monitor/templates/metrics.mako:80
+#: src/monitor/templates/metrics.mako:163
+msgid "previous page"
+msgstr "上一页"
+
+#: src/monitor/templates/index.mako:155
+#: src/monitor/templates/index.mako:246
+#: src/monitor/templates/index.mako:403
+#: src/monitor/templates/metrics.mako:79
+#: src/monitor/templates/metrics.mako:162
+msgid "index page"
+msgstr "首页"
+
+#: src/monitor/templates/index.mako:157
+#: src/monitor/templates/index.mako:248
+#: src/monitor/templates/index.mako:433
+#: src/monitor/templates/metrics.mako:213
+msgid "aready index page."
+msgstr "已是首页"
+
+#: src/monitor/templates/index.mako:162
+msgid "Job History Report Details"
+msgstr "Job 历史执行结果统计报表"
+
+#: src/monitor/templates/index.mako:178
+msgid "User Name / Job Started Day"
+msgstr "请输入用户名/Job开始时间"
+
+#: src/monitor/templates/index.mako:179
+#: src/monitor/templates/index.mako:431
+#: src/monitor/templates/metrics.mako:58
+#: src/monitor/templates/metrics.mako:211
+msgid "search"
+msgstr "搜索"
+
+#: src/monitor/templates/index.mako:186
+msgid "User Name"
+msgstr "用户"
+
+#: src/monitor/templates/index.mako:198
+msgid "Job Execution Time"
+msgstr "Job执行时间"
+
+#: src/monitor/templates/index.mako:199
+msgid "Map Count"
+msgstr "Map计数"
+
+#: src/monitor/templates/index.mako:200
+msgid "Reduce Count"
+msgstr "Reduce计数"
+
+#: src/monitor/templates/index.mako:255
+msgid "User File/Directory Count Report"
+msgstr "用户文件/目录数量统计"
+
+#: src/monitor/templates/index.mako:268
+msgid "User Space Usage Report"
+msgstr "用户空间使用统计"
+
+#: src/monitor/templates/index.mako:281
+msgid "HDFS File Usage Report"
+msgstr "HDFS集群文件使用统计"
+
+#: src/monitor/templates/index.mako:294
+msgid "HDFS Memory Usage Report"
+msgstr "HDFS集群堆内存使用统计"
+
+#: src/monitor/templates/index.mako:307
+msgid "HDFS Nonheap Usage Report"
+msgstr "HDFS集群非堆内存使用统计"
+
+#: src/monitor/templates/index.mako:320
+msgid "HDFS Capacity Usage Report"
+msgstr "HDFS集群容量使用统计"
+
+#: src/monitor/templates/index.mako:333
+msgid "Data Nodes Run-State Report"
+msgstr "数据节点运行统计"
+
+#: src/monitor/templates/index.mako:346
+msgid "Data Nodes Run-State Details"
+msgstr "数据节点运行状态详情"
+
+#: src/monitor/templates/index.mako:365
+#: src/monitor/templates/metrics.mako:41
+msgid "Node"
+msgstr "节点"
+
+#: src/monitor/templates/index.mako:366
+msgid "Num Blocks"
+msgstr "块数量"
+
+#: src/monitor/templates/index.mako:367
+msgid "Used Space Size"
+msgstr "使用空间"
+
+#: src/monitor/templates/index.mako:368
+msgid "Last Contact"
+msgstr "上次联系"
+
+#: src/monitor/templates/index.mako:369
+msgid "Capacity"
+msgstr "容量"
+
+#: src/monitor/templates/index.mako:370
+msgid "NonDfs Used Space"
+msgstr "非堆内DFS空间使用"
+
+#: src/monitor/templates/index.mako:371
+msgid "Admin State"
+msgstr "管理状态"
+
+#: src/monitor/templates/index.mako:372
+#: src/monitor/templates/index.mako:374
+msgid "Used Space"
+msgstr "空间使用率"
+
+#: src/monitor/templates/index.mako:373
+msgid "Status"
+msgstr "状态"
+
+#: src/monitor/templates/index.mako:414
+#: src/monitor/templates/metrics.mako:191
+msgid "toTop"
+msgstr "返回顶部"
+
+#: src/monitor/templates/index.mako:430
+#: src/monitor/templates/metrics.mako:210
+msgid "loading..."
+msgstr "数据加载中..."
+
+#: src/monitor/templates/index.mako:430
+#: src/monitor/templates/metrics.mako:210
+msgid "emptyData"
+msgstr "查询不到相关数据!"
+
+#: src/monitor/templates/index.mako:431
+#: src/monitor/templates/metrics.mako:211
+msgid "total"
+msgstr "总共"
+
+#: src/monitor/templates/index.mako:432
+#: src/monitor/templates/metrics.mako:212
+msgid "page"
+msgstr "页"
+
+#: src/monitor/templates/index.mako:432
+#: src/monitor/templates/metrics.mako:212
+msgid "aready last page!"
+msgstr "已是末页"
+
+#: src/monitor/templates/index.mako:426
+#: src/monitor/templates/metrics.mako:206
+msgid "January"
+msgstr "一月"
+
+#: src/monitor/templates/index.mako:426
+#: src/monitor/templates/metrics.mako:206
+msgid "February"
+msgstr "二月"
+
+#: src/monitor/templates/index.mako:426
+#: src/monitor/templates/metrics.mako:206
+msgid "March"
+msgstr "三月"
+
+#: src/monitor/templates/index.mako:426
+#: src/monitor/templates/metrics.mako:206
+msgid "April"
+msgstr "四月"
+
+#: src/monitor/templates/index.mako:426
+#: src/monitor/templates/metrics.mako:206
+msgid "May"
+msgstr "五月"
+
+#: src/monitor/templates/index.mako:426
+#: src/monitor/templates/metrics.mako:206
+msgid "June"
+msgstr "六月"
+
+#: src/monitor/templates/index.mako:427
+#: src/monitor/templates/metrics.mako:207
+msgid "July"
+msgstr "七月"
+
+#: src/monitor/templates/index.mako:427
+#: src/monitor/templates/metrics.mako:207
+msgid "August"
+msgstr "八月"
+
+#: src/monitor/templates/index.mako:427
+#: src/monitor/templates/metrics.mako:207
+msgid "September"
+msgstr "九月"
+
+#: src/monitor/templates/index.mako:427
+#: src/monitor/templates/metrics.mako:207
+msgid "October"
+msgstr "十月"
+
+#: src/monitor/templates/index.mako:427
+#: src/monitor/templates/metrics.mako:207
+msgid "November"
+msgstr "十一月"
+
+#: src/monitor/templates/index.mako:427
+#: src/monitor/templates/metrics.mako:207
+msgid "December"
+msgstr "十二月"
+
+#: src/monitor/templates/index.mako:428
+#: src/monitor/templates/metrics.mako:208
+msgid "Monday"
+msgstr "星期一"
+
+#: src/monitor/templates/index.mako:428
+#: src/monitor/templates/metrics.mako:208
+msgid "Tuesday"
+msgstr "星期二"
+
+#: src/monitor/templates/index.mako:428
+#: src/monitor/templates/metrics.mako:208
+msgid "Wednesday"
+msgstr "星期三"
+
+#: src/monitor/templates/index.mako:428
+#: src/monitor/templates/metrics.mako:208
+msgid "Thursday"
+msgstr "星期四"
+
+#: src/monitor/templates/index.mako:428
+#: src/monitor/templates/metrics.mako:208
+msgid "Friday"
+msgstr "星期五"
+
+#: src/monitor/templates/index.mako:428
+#: src/monitor/templates/metrics.mako:208
+msgid "Saturday"
+msgstr "星期六"
+
+#: src/monitor/templates/index.mako:428
+#: src/monitor/templates/metrics.mako:208
+msgid "Sunday"
+msgstr "星期日"
+
+#: src/monitor/templates/metrics.mako:35
+msgid "Conditions"
+msgstr "条件过滤"
+
+#: src/monitor/templates/metrics.mako:37
+msgid "Cluster"
+msgstr "集群"
+
+#: src/monitor/templates/metrics.mako:52
+msgid "From"
+msgstr "从 "
+
+#: src/monitor/templates/metrics.mako:54
+msgid "To"
+msgstr "至 "
+
+#: src/monitor/templates/metrics.mako:66
+#: src/monitor/templates/metrics.mako:148
+msgid "Cluster Node Metric Data"
+msgstr "集群节点Metric数据"
+
+#: src/monitor/templates/metrics.mako:68
+#: src/monitor/templates/metrics.mako:151
+msgid "Lines"
+msgstr "行"
+
+#: src/monitor/templates/metrics.mako:85
+#: src/monitor/templates/metrics.mako:168
+msgid "Columns"
+msgstr "列"
+
+#: src/monitor/templates/metrics.mako:109
+msgid "All Report of Cluster"
+msgstr "集群通用报表"
+
+#: src/monitor/templates/metrics.mako:128
+msgid "Critical Metrics of Cluster"
+msgstr "集群关键Metrics数据"

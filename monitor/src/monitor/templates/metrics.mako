@@ -1,5 +1,6 @@
 <%!
 from desktop.views import commonheader, commonfooter
+from django.utils.translation import ugettext as _
 from monitor.conf import DATA_SERVICE
 %>
 
@@ -21,8 +22,8 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
  <div class="subnav subnav-fixed">
     <div class="container-fluid">
       <ul class="nav nav-pills">
-      		<li class=""><a href="${url('monitor.views.index')}">统计报表</a></li>
-	        <li class="active"><a href="${url('monitor.views.metrics')}">Metrics监控</a></li>
+		<li class=""><a href="${url('monitor.views.index')}">${_('Reports Monitor')}</a></li>
+        <li class="active"><a href="${url('monitor.views.metrics')}">${_('Metrics Monitor')}</a></li>
 		</ul>
 		<ul class="dropdown-menu" role="menu" aria-labelledby="reportsMenu" id="menu">
 			<li role="presentation" ><a role="menuitem" tabindex="-1" href="javascript:void(0);" onclick="showHdfs(true);">HDFS</a></li>
@@ -32,13 +33,13 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
     </div>
   </div>
 <div id="conditions" class="panel panel-default" style="margin-top:30px;"> 
-	<div class="panel-heading">Conditions</div>
+	<div class="panel-heading">${_('Conditions')}</div>
 	<div class="panel-body">
-		<span id="clusterList">&nbsp;Cluster&nbsp;&gt;
+		<span id="clusterList">&nbsp;${_('Cluster')}&nbsp;&gt;&gt;
 			<select name="clusters" style="font-size:14px;" id="clusters" onChange="clusterChange()" >
 			</select>
 		</span>
-		<span id="hosts" >&nbsp;Node&nbsp;&gt;		
+		<span id="hosts" >&nbsp;${_('Node')}&nbsp;&gt;&gt;	
 			<select name="hosts" id="hostList" style="font-size:14px;"  onChange="hostChange()" >
 			</select>
 		</span>
@@ -49,13 +50,13 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 		</span>
 		
 		<span id="times" >
-			&nbsp;&nbsp;From 
+			&nbsp;&nbsp;${_('From')}&gt;&gt; 
 			<input id="starttime" class="times" value="" type="text" >
-			&nbsp;&nbsp;To&nbsp;&nbsp;
+			&nbsp;&nbsp;${_('To')}&gt;&gt;&nbsp;&nbsp;
 			<input value="" class="times" type="text" id="endtime" > 
 						
 			&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="button" value="Search" onclick="searchMetrics()" style="margin-top:2px;margin-left:5px;">
+			<input type="button" value="${_('search')}" onclick="searchMetrics()" style="margin-top:2px;margin-left:5px;">
 		</span>
 	</div>
 </div>
@@ -63,9 +64,9 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 <span style="float:center;width:100%;color:red;height:30px;" id="metricsSearchError"></span>
 
 <div id="host_metic_graphs1"  class="panel panel-default">
-	<div class="panel-heading">Metric Data
+	<div class="panel-heading">${_('Cluster Node Metric Data')}
 		<div id="pages1" style="float:right;margin-bottom:2px;margin-right:10px;">
-			<strong>Lines</strong>
+			<strong>${_('Lines')}</strong>
 			<select id="pagesL1" style="width: 55px;" onChange="showHost(1)">
 				<option value=1>1</option>
 				<option value=2>2</option>
@@ -76,13 +77,13 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 				<option value=7 >7</option>				
 				<option value=8 >8</option>
 			</select>
-			<a href="javascript:void(0)" id="firstL1" onclick="goFirstLine(1)">首页</a>
-			<a href="javascript:void(0)" id="previousL1" onclick="goPreviousLine(1)">上一页</a>
-			<a href="javascript:void(0)" id="lastL1" onclick="goNextLine(1)">下一页</a>
+			<a href="javascript:void(0)" id="firstL1" onclick="goFirstLine(1)">${_('index page')}</a>
+			<a href="javascript:void(0)" id="previousL1" onclick="goPreviousLine(1)">${_('previous page')}</a>
+			<a href="javascript:void(0)" id="lastL1" onclick="goNextLine(1)">${_('next page')}</a>
 			<span style="float:center;width:100%;color:red;height:30px;" id="previousLError1"></span>
 		</div>	
 		<div style="float:right;margin-bottom:2px;margin-right:5px;">
-			<strong>Columns</strong>
+			<strong>${_('Columns')}</strong>
 			<select id="pagesH1" style="width: 55px;" onChange="showHost(1)">
 				<option value=1>1</option>
 				<option value=2>2</option>
@@ -106,7 +107,7 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 </div>
 
 <div id="cluster_reports" class="panel panel-default"> 
-	<div class="panel-heading">All Report of Cluster 
+	<div class="panel-heading">${_('All Report of Cluster')}
 		<div class="btns">					
 			<strong class="btnstyle">Zoom</strong>
 			<button class="btnstyle" id="reportBtn0" >reset</button>
@@ -119,74 +120,13 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 			<button class="btnstyle" id="reportBtn6">3m</button>
 		</div>		
 	</div> 
-	<div class="panel-body" id="monitors">
-		<!-- div id="cluster_metric_graphs">
-			<center>
-				<table border="0" cellspacing="4" style="table-layout:fixed;width:96%;" >
-					<tbody>
-						<tr>
-							<td style="width:48%;vertical-align:top;">								
-								<div class="panel panel-info" id="cpu_report" style="width:98%;">
-									<div class="panel-heading">CPU监控统计
-										<a class="pages" href="javascript:void(0);" onclick="isFold('cpu_report','cpu_report_body','470px')" title="折叠/展开" style="float:right;">
-											<span id="cpu_report_icon" class="glyphicon glyphicon-chevron-up"></span>
-										</a>
-									</div>
-									<div class="panel-body" style="height:420px;" id="cpu_report_body">
-										<div class="widget-box clog-highchart-widget" style="height:400px;" id="chartDemo1"></div>
-									</div>
-								</div>
-							</td>
-							<td style="width:48%;vertical-align:top;">	
-								<div class="panel panel-info" style="width:98%;" id="mem_report">
-									<div class="panel-heading">Memory监控统计
-										<a class="pages" href="javascript:void(0);" onclick="isFold('mem_report','mem_report_body','470px')" title="折叠/展开" style="float:right;">
-											<span id="mem_report_icon" class="glyphicon glyphicon-chevron-up"></span>
-										</a>
-									</div>
-									<div class="panel-body" style="height:420px;" id="mem_report_body">			
-										<div class="widget-box clog-highchart-widget" style="height:400px;" id="chartDemo2"></div>
-									</div>
-								</div>
-							</td>
-						</tr>
-						
-						<tr>
-							<td style="width:48%;vertical-align:top;">	
-								<div class="panel panel-info" style="width:98%;" id="load_report">
-									<div class="panel-heading">Load监控统计
-										<a class="pages" href="javascript:void(0);" onclick="isFold('load_report','load_report_body','470px')" title="折叠/展开" style="float:right;">
-											<span id="load_report_icon" class="glyphicon glyphicon-chevron-up"></span>
-										</a>
-									</div>
-									<div class="panel-body" style="height:420px;" id="load_report_body"> 			
-										<div class="widget-box clog-highchart-widget" style="height:400px;" id="chartDemo3"></div>
-									</div>
-								</div>
-							</td>
-							<td style="width:48%;vertical-align:top;">	
-								<div class="panel panel-info" style="width:98%;" id="network_report">
-									<div class="panel-heading">Network监控统计
-										<a class="pages" href="javascript:void(0);" onclick="isFold('network_report','network_report_body','470px')" title="折叠/展开" style="float:right;">
-											<span id="network_report_icon" class="glyphicon glyphicon-chevron-up"></span>
-										</a>
-									</div>
-									<div class="panel-body" style="height:420px;" id="network_report_body">			
-										<div class="widget-box clog-highchart-widget" style="height:400px;" id="chartDemo4"></div>
-									</div>
-								</div>
-							</td>
-						</tr>
-					</tbody> 
-				</table>
-			</center>
-		</div -->  
+	<div class="panel-body" id="monitors">		
 	</div>
 </div>
 
 
 <div id="cluster_Common_Metrics" class="panel panel-default"> 
-	<div class="panel-heading">Critical Metrics of Cluster
+	<div class="panel-heading">${_('Critical Metrics of Cluster')}
 		<div class="btns">
 			<strong class="btnstyle">Zoom</strong>
 			<button class="btnstyle" id="cmcBtn0" >reset</button>
@@ -206,10 +146,10 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 
 <div id="host_metic_graphs2" class="panel panel-default">
 
-	<div class="panel-heading">Metrics Data	
+	<div class="panel-heading">${_('Cluster Node Metric Data')}	
 		<span style="float:center;width:100%;color:red;height:30px;" id="metricsSearchError2"></span>
 		<div id="pages" style="float:right;margin-bottom:2px;margin-right:10px;">
-			<strong>Lines</strong>
+			<strong>${_('Lines')}</strong>
 			<select id="pagesL2" style="width: 55px;" onChange="showHost(2)">
 				<option value=1>1</option>
 				<option value=2>2</option>
@@ -220,13 +160,13 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 				<option value=7 >7</option>				
 				<option value=8 >8</option>
 			</select>
-			<a href="javascript:void(0)" id="firstL2" onclick="goFirstLine(2)">首页</a>
-			<a href="javascript:void(0)" id="previousL2" onclick="goPreviousLine(2)">上一页</a>
-			<a href="javascript:void(0)" id="lastL2" onclick="goNextLine(2)">下一页</a>
+			<a href="javascript:void(0)" id="firstL2" onclick="goFirstLine(2)">${_('index page')}</a>
+			<a href="javascript:void(0)" id="previousL2" onclick="goPreviousLine(2)">${_('previous page')}</a>
+			<a href="javascript:void(0)" id="lastL2" onclick="goNextLine(2)">${_('next page')}</a>
 			<span style="float:center;width:100%;color:red;height:30px;" id="previousLError2"></span>
 		</div>	
 		<div style="float:right;margin-bottom:2px;margin-right:5px;">
-			<strong>Columns</strong>
+			<strong>${_('Columns')}</strong>
 			<select id="pagesH2" style="width: 55px;" onChange="showHost(2)">
 				<option value=1>1</option>
 				<option value=2>2</option>
@@ -249,7 +189,7 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 	</div>	
 </div>
 
-<div id="scrollUp" title="返回顶部" style="display: block;"></div>
+<div id="scrollUp" title="${_('toTop')}" style="display: block;"></div>
 
 <script src="http://svn.ui.sh.ctripcorp.com/istyle/code/istyle.30626.js" type="text/javascript" charset="utf-8"></script>
 <script src="/monitor/static/js/jquery.autocomplete.js" type="text/javascript" charset="utf-8"></script>
@@ -264,10 +204,37 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 <script src="/monitor/static/js/jquery.livesearch.min.js" type="text/javascript" charset="utf-8"></script> 
 <script src="/monitor/static/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>  	
 <script type="text/javascript" charset="utf-8">  
-	//滚动监控
+	months =  ["${_('January')}","${_('February')}","${_('March')}","${_('April')}","${_('May')}","${_('June')}"
+	           ,"${_('July')}","${_('August')}","${_('September')}","${_('October')}","${_('November')}","${_('December')}"],
+		weeks = ["${_('Monday')}","${_('Tuesday')}","${_('Wednesday')}","${_('Thursday')}","${_('Friday')}","${_('Saturday')}","${_('Sunday')}"];
+	
+	loadingStr ="${_('loading...')}" , emptyData = "${_('emptyData')}" 
+		, searchStr = "${_('search')}" , totalStr ="${_('total')}" 
+		, pageStr ="${_('page')}" ,lastPageStr = "${_('aready last page!')}"
+		, firstPageStr ="${_('aready index page.')}", foldStr = "${_('fold open')}" ;
+
+	Highcharts.setOptions({
+		global: {
+			useUTC: false
+		  },
+		lang:{
+			months:months,
+			shortMonths:months,
+			weekdays:weeks,
+			loading:loadingStr
+		}
+	});	
+	
+	oLanguageStr = {
+		sEmptyTable : emptyData,
+		sZeroRecords : emptyData,
+		sProcessing : loadingStr,
+		sSearch : searchStr
+	};
+	
 	$(window).scroll(function(){
 	   var sc=$(window).scrollTop();
-	   if(sc>300){   //设置下拉滚动超过多少后出现返回按钮
+	   if(sc>300){
 			$("#scrollUp").fadeIn();
 	   }else{
 			$("#scrollUp").fadeOut();
@@ -278,9 +245,8 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 		
 	$(window).load(function() {
 		
-		//返回顶部按钮
 		$("#scrollUp").click(function(){
-			$('body,html').animate({scrollTop:0},500);  //返回顶部动画设置，500为返回时间，单位毫秒
+			$('body,html').animate({scrollTop:0},500);
 		});
 	});	
 		
@@ -293,8 +259,7 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 		gangliaPath = ds_url + '/ganglia/clusterinfo' ,
 		allMetricsPath = ds_url + '/metric/getallmetriclist';	
 				
-	var reports = ['cpu_report','mem_report','load_report','network_report'] ,	
-		months = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
+	var reports = ['cpu_report','mem_report','load_report','network_report'];
 		
 	var today = new Date();
 	var year = today.getFullYear(),
@@ -304,18 +269,6 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 		mi = today.getMinutes(),		
 		initColumns = 4,
 		initLines = 3;	
-		
-	Highcharts.setOptions({
-		global: {
-       		useUTC: false
-   	  	},
-		lang:{
-			months:months,
-			shortMonths:months,
-			weekdays:['星期一','星期二','星期三','星期四','星期五','星期六','星期七'],
-			loading:"表捉急，我们正在努力加载数据..."
-		}
-	});
 		
 	function initTime(){
 		$("#starttime").datetimepicker({
@@ -620,7 +573,7 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 		}else if(nodeOption == 2 ){
 			if(nextNodes == null || nextNodes.length == 0 || typeof(nextNodes) == 'undefined') {
 				
-				title = "没找到其他数据." ;	
+				title = emptyData ;	
 				$("#previousLError"+id).text(title);
 				$("#previousLError"+id).show();
 				$("#lastL"+id).hide();
@@ -650,7 +603,7 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 				if(i> hosts.length) break ;
 				
 				if(currentNodes[index] == null || typeof(currentNodes[index]) == 'undefined'){
-					title = "没找到其他数据." ;	
+					title = emptyData ;	
 					$("#previousLError"+id).text(title);
 					$("#previousLError"+id).show();
 					$("#previousL"+id).hide();
@@ -682,7 +635,7 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 	function goFirstLine(id ){
 		nodeOption = 1 ;
 		if(nodePage == 1 ){
-			title = "已经是第一页." ;	
+			title = firstPageStr ;	
 			$("#previousLError"+id).text(title);
 			$("#previousLError"+id).show();
 			$("#previousL1").hide();
@@ -703,7 +656,7 @@ ${commonheader("Di Portal", "monitor", user, "100px")|n,unicode}
 		nodeOption = 3 ;
 		
 		if(nodePage == 1 ){
-			title = "已经是第一页." ;	
+			title =firstPageStr ;	
 			$("#previousLError"+id).text(title);
 			$("#previousLError"+id).show();
 			$("#previousL1").hide();

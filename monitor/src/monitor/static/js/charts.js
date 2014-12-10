@@ -416,7 +416,7 @@
 					}, 
 					xAxis:{
 						categories:userList,
-						title:{text:'用户'},
+						title:{text:'Users'},
 						labels:{step:1}
 					},
 					plotOptions:{
@@ -441,7 +441,7 @@
 						size:280,
 						showInLegend:false,
 						dataLabels:{enabled:true},
-						name:'用户Job比重',						
+						name:'User Job Weight',						
 						tooltip: {
 							pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
 						},
@@ -520,7 +520,7 @@
 					}, 
 					xAxis:{
 						categories:userList,
-						title:{text: '用户'},
+						title:{text: 'Users'},
 						labels:{step:1}
 					},
 					plotOptions:{
@@ -555,7 +555,7 @@
 					}, 
 					xAxis:{
 						categories:userList,
-						title:{text: '用户'},
+						title:{text: 'Users'},
 						labels:{step:1}
 					},
 					plotOptions:{
@@ -800,7 +800,7 @@
 		
 		totalPage = totalPage < 1 ? 1:totalPage ;
 		
-		$("#totalPage").text('共'+totalPage+'页');
+		$("#totalPage").text(totalStr +totalPage+pageStr);
 		$("#totalPage").show();
 		$("#pageLiveError").text('');
 		$("#pageLiveError").hide();	
@@ -815,7 +815,7 @@
 			
 			if(currentNodes == null || currentNodes.length == 0 || typeof(currentNodes) == 'undefined') {
 				
-				title = "已经是最后一页." ;	
+				title = lastPageStr ;	
 				$("#pageLiveError").text(title);
 				$("#pageLiveError").show();
 				$("#lastLive").hide();
@@ -832,7 +832,7 @@
 			var end = (nodeDataPage - 1 ) * pageShow ,start = (nodeDataPage-2) * pageShow ;		
 			currentNodes = [] ,  index = 0;
 						
-			for(i = start ; i < end ;i ++){
+			for(var i = start ; i < end ;i ++){
 				currentNodes[index] = nodesData[i];
 				
 				if(i> nodesData.length) break ;
@@ -851,12 +851,12 @@
 			nodesChart();
 			
 			currentNodes = [] ,  count = 0 ;
-			for(i = 0 ; i <start;i++){
+			for(var i = 0 ; i <start;i++){
 				currentNodes[count] = nodesData[i];
 				count ++ ;
 			}
 			
-			for(i = end ; i<nodesData.length;i++){
+			for(var i = end ; i<nodesData.length;i++){
 				currentNodes[count] = nodesData[i];
 				count ++ ;
 			}	
@@ -872,7 +872,7 @@
 		$("#previousLive").show();
 		
 		if(nodeDataPage >totalPage ){
-			$("#pageLiveError").text("已经是最后一页");	
+			$("#pageLiveError").text(lastPageStr);	
 			$("#pageLiveError").show();
 			$("#lastLive").hide();
 			return false ;
@@ -889,7 +889,7 @@
 		$("#pageLiveError").hide();
 		
 		if(nodeDataPage == 1 ){			
-			$("#pageLiveError").text("已经第一页");	
+			$("#pageLiveError").text(firstPageStr);	
 			$("#pageLiveError").show();
 			$("#previousLive").hide();
 			return false ;
@@ -903,7 +903,7 @@
 		
 		if(nodeDataPage == 1 ){
 			
-			$("#pageLiveError").text("已经首页");	
+			$("#pageLiveError").text(firstPageStr);	
 			$("#pageLiveError").show();
 			$("#previousLive").hide();
 			return false ;
@@ -950,12 +950,7 @@
 			aaData:currentNodes,
 			aaSorting: [[0, 'desc']], 
 //			asStripClasses:
-			oLanguage:{
-				sEmptyTable:"查询不到相关数据!",
-				sZeroRecords:"查询不到相关数据!",
-				sProcessing:"正在加载中...",
-				sSearch:"搜索"
-			},
+			oLanguage:oLanguageStr,
 			aoColumnDefs:[
 				{'sType':'numeric',
 				 'bSearchable': false, 
@@ -1191,7 +1186,7 @@
 		
 		var aFold = document.createElement('a');
 		aFold.setAttribute('class','pages');
-		aFold.title="折叠/展开";
+		aFold.title= foldStr ;
 		aFold.style.float="right";
 		aFold.href="javascript:void(0)";				
 		
@@ -1429,7 +1424,7 @@
 						
 		var aFold = document.createElement('a');
 		aFold.setAttribute('class','pages');
-		aFold.title="折叠/展开";
+		aFold.title= foldStr ;
 		aFold.style.float="right";
 		aFold.href="javascript:void(0)";
 		aFold.setAttribute('onclick',
@@ -1458,8 +1453,7 @@
 		parent.appendChild(panelDiv);
 	}
 					
-	function foldPanel(id,height ,flag ){
-		//自动折叠该报表
+	function foldPanel(id,height ,flag ){ 
 		var panel = document.getElementById(id);
 		var pBody = document.getElementById(id+'_body');
 		var icon = document.getElementById(id+'_icon');		
